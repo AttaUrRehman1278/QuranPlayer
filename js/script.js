@@ -75,7 +75,7 @@ async function displayAlbums() {
     let array = Array.from(anchors)
     for (let index = 0; index < array.length; index++) {
         const element = array[index];
-        if (element.href.includes("/tilawat")){
+        if (element.href.includes("/tilawat") && !element.href.includes(".htaccess")){
             let folder = element.href.split("/").slice(-2)[0]
 
             let response = await fetch(`/tilawat/${folder}/info.json`);
