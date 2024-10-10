@@ -35,10 +35,11 @@ body {
     width: 75%;
     height: 584px;
     position: relative;
+    border-radius: 10px;
 }
 
 .main nav {
-    padding: 4px 20px !important;
+    padding: 4px 10px !important;
     top: 0px;
     z-index: 2;
     background-color: #121212;
@@ -46,7 +47,7 @@ body {
     border-top-right-radius: 10px;
     position: sticky;
     display: flex;
-    /* justify-content: center; */
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -79,7 +80,7 @@ body {
 
 .nav-btn {
     display: flex;
-    width: 200px;
+    width: 165px;
 }
 
 .nav-btn button {
@@ -88,7 +89,7 @@ body {
     padding: 13px 17px;
     border-radius: 50px;
     font-weight: bold;
-    margin-right: 5px;
+    /* margin-right: 5px; */
 }
 
 .login-btn {
@@ -212,12 +213,9 @@ body {
     position: relative;
     height: 480px;
     overflow: auto;
+    bottom: 25px;
 }
 
-.albumCards {
-    max-height: 220px;
-    overflow: auto;
-}
 
 .popular-albums>h2 {
     margin-left: 20px;
@@ -255,6 +253,8 @@ body {
     flex-wrap: wrap;
     margin-left: 20px;
     overflow-y: auto;
+    max-height: 220px;
+    overflow: auto;
 }
 
 .card:hover {
@@ -343,12 +343,32 @@ body {
 }
 
 @media (max-width:900px) {
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .main {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0px;
+    }
+
+
+    .main nav {
+        border-radius: 0;
+    }
     .sidebar {
         position: absolute;
         left: -120%;
         transition: all 300ms;
         z-index: 100;
         width: 335px;
+        height: 100vh;
+        border-radius: 0;
+    }
+    .sidebar-bottom {
+        height: 478px;
     }
 
     .close {
@@ -365,15 +385,17 @@ body {
 
     .main {
         width: 100%;
+        border-radius: 0;
     }
 
     .play {
         font-size: 15px;
         width: 90vw;
+        bottom: 25px;
     }
 
     .playlist ul li {
-        width: 220px;
+        width: 80%;
         gap: 30px;
     }
     .arrow .hamburger {
@@ -404,4 +426,10 @@ body {
         justify-content: center;
         align-items: center;
     }
+    .sidebar {
+        width: 100%;
+    }
+    /* .playlist ul li {
+        width: 90%;
+    } */
 }
